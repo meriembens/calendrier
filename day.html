@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails du Jour</title>
+  <link rel="stylesheet" href="day.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="buttons">
+        <button onclick="window.location.href='hey.html'">
+          <i class="fa-solid fa-chevron-left"></i> Retour au calendrier
+        </button>
+      </div>
+    </div>
+    <div id="dateDetails">
+      <div id="day"></div>
+      <div id="month"></div>
+      <div id="year"></div>
+    </div>
+    <div class="weekday" id="weekday"></div>
+    <div class="hours" id="hours"></div>
+  </div>
+  
+  <script src="day.js"></script>
+</body>
+</html>

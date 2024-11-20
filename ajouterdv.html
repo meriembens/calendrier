@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter un Rendez-vous</title>
+  <link rel="stylesheet" href="ajouterdv.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Ajouter un Rendez-vous</h2>
+    <p>Saisissez le formulaire ci-dessous pour ajouter un rendez-vous</p>
+
+    <form id="appointmentForm" action="add_rdv.php" method="POST">
+      <table>
+        
+        <tr>
+          <td>
+            <div class="prenom">
+              <label for="prenom">Saisissez le prénom du patient :</label>
+              <input type="text" id="prenom" name="prenom_patient" placeholder="Entrez le prénom du patient" required>
+            </div>
+          </td>
+          <td>
+            <div class="nom">
+              <label for="nom">Saisissez le nom du patient :</label>
+              <input type="text" id="nom" name="nom_patient" placeholder="Entrez le nom du patient" required>
+            </div>
+          </td>
+        </tr>
+
+        
+        <tr>
+          <td colspan="2">
+            <div class="champ">
+              <label for="phone">Saisissez le numéro de téléphone du patient :</label>
+              <input type="text" id="phone" name="phone" placeholder="(+213)" required pattern="\d{10}">
+            </div>
+          </td>
+        </tr>
+
+        
+        <tr>
+          <td>
+            <div class="selection">
+              <label for="nom_docteur">Choisissez le dentiste :</label>
+              <select id="nom_docteur" name="doctor">
+                <option value="" disabled selected>Choisir un médecin</option>
+                <option value="1">Dr Keciour Nesma</option>
+                <option value="2">Dr Belhedid Ibtissem</option>
+              </select>
+            </div>
+          </td>
+          <td>
+            <div class="selection">
+              <label for="motif">Choisissez le motif de rendez-vous :</label>
+              <select id="motif" name="motif">
+                <option value="" disabled selected>Choisir un motif</option>
+                <option value="consultation">Consultation</option>
+                <option value="blanchiment">Blanchiment dentaire</option>
+                <option value="detartrage">Détartrage et Nettoyage</option>
+                <option value="orthodontie">Orthodontie (appareil dentaire)</option>
+                <option value="soin">Soins des caries</option>
+                <option value="implant">Implants dentaires</option>
+                <option value="endodontie">Endodontie (traitement de canal)</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+
+        
+        <tr>
+          <td colspan="2">
+            <div class="date">
+              <label for="appointmentDate">Date de rendez-vous :</label>
+              <input type="text" id="appointmentDate" name="date" placeholder="Sélectionnez une date" required>
+            </div>
+          </td>
+        </tr>
+
+        
+        <tr>
+          <td colspan="2">
+            <div id="timeSlots">
+              <p class="jj">Heures de rendez-vous disponibles :</p>
+              <div class="slots"></div>
+              <input type="hidden" id="selectedTime" name="appointment_time">
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      
+      <div class="buttons">
+        <button type="reset" onclick="window.location.href='/calendrier/hey.html'" class="annuler">Annuler</button>
+        <button type="submit" name="submit" class="ajouter">Ajouter</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
+  <script src="ajouterdv.js"></script>
+</body>
+
+</html>
